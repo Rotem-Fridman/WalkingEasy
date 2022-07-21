@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css" />
+<script src="script.js"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+</style>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CampusRoutes">
+    <meta name="keywords" content="Blind, Navigation, Israeli Dog Center">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="main" id="mainbackground">
+      <span id="accessability"></span>
+
+      <button aria-label="Exit" class="back-btn" id="closeBtn" onclick="clearAll()"><img src="/Images/cancel-button.png"/></button>
+
+      <section class="title">
+        <h1>המרכז הישראלי לכלבי נחייה</h1>
+        <h2>מיקום נוכחי: משרדים</h2>
+        <h3>בחרו את היעד אליו תרצו להגיע</h3>
+      </section>
+
+      <div class="boxes">
+        <div aria-label="כניסת הולכי רגל" onclick="isActive('room', 'roomSound', 'roomSound2')" id="room">
+          <img id="bedImg" src="Images/junction.png" />
+          <audio id="roomSound" src="Sounds/MainJunction.mp4"></audio>
+          <audio id="roomSound2" src=""></audio>
+        </div>
+        <div aria-label="חצר הרצה" onclick="isActive('dog', 'dogSound', 'dogSound2')" id="dog">
+          <img id="dogImg" src="Images/Dog.png" />
+          <audio id="dogSound" src="Sounds/Dog_1.mp4"></audio>
+          <audio id="dogSound2" src="Sounds/Dog_2.mp4"></audio>
+        </div>
+        <div aria-label="בריכת דגים" onclick="isActive('pond', 'pondSound', 'pondSound2')" id="pond">
+          <img id="fishImg" src="Images/goldfish.png"/>
+          <audio id="pondSound" src="Sounds/Pond_1.mp4"></audio>
+          <audio id="pondSound2" src="Sounds/Pond_2.mp4"></audio>
+        </div>
+        <div aria-label="צומת ראשית" onclick="isActive('food', 'foodSound', 'foodSound2')" id="food">
+          <img id="mealImg" src="Images/Walking.png"/>
+          <audio id="foodSound" src="Sounds/Junction_1.mp4"></audio>
+          <audio id="foodSound2" src="Sounds/Junction_2.mp4"></audio>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
