@@ -4,7 +4,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: aliceblue;
+  background-color: #ffffff;
 }
 
 body {
@@ -20,12 +20,11 @@ body {
 .back-btn {
   border: none;
   background-color: transparent;
-  font-size: 120px;
   position: absolute;
   top: 50px;
   left: 20px;
   display: none;
-  width:150px;
+  width:80px;
 }
 
 .back-btn.show {
@@ -60,8 +59,8 @@ body {
   filter: brightness(0) invert(1);
 }
 
-img {
-  width: 290px;
+ img {
+  width: 140px;
   max-width: 100%;
 }
 
@@ -76,15 +75,15 @@ img {
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 14pt;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 14pt;
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 18pt;
 }
 
 #accessability {
@@ -94,7 +93,7 @@ h1 {
 
 @media screen and (max-width: 930px) {
   .boxes > div {
-    min-height: 400px;
+    min-height: 340px;
     min-width: 40%;
   }
 }
