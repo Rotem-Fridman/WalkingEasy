@@ -75,6 +75,10 @@ body {
   background-color: #000;
 }
 
+.boxes > div > svg {
+  width: 100%;
+}
+
 .boxes > div.active svg {
   fill: #fff;
 }
@@ -167,6 +171,10 @@ h1 {
   font-size: 20px;
   font-weight: 700;
   color: black;
+}
+
+.buttons_container button {
+  color: #000;
 }
 
 .btn_acc_font {
