@@ -76,7 +76,7 @@ body {
 }
 
 .boxes > div > svg {
-  width: 100%;
+  width: 80%;
 }
 
 .boxes > div.active svg {
@@ -207,7 +207,7 @@ h1 {
   border-radius: 9px;
 }
 
-.btn_acc_yellow {
+button.btn_acc_yellow {
   background: black;
   color: yellow;
   font-weight: 700;
