@@ -21,14 +21,23 @@ body {
   border: none;
   background-color: transparent;
   position: absolute;
-  top: 50px;
-  left: 20px;
+  top: 100px;
+  left: 0px;
   display: none;
   width:80px;
 }
 
+.color_yellow .back-btn {
+  fill: yellow
+}
+
 .back-btn.show {
     display: block;
+}
+
+.title {
+  height: 155px;
+  padding-right: 12px;
 }
 
 .boxes {
@@ -36,6 +45,7 @@ body {
   flex-wrap: wrap;
   margin-top: 20px;
   position: relative;
+  height: calc(100vh - 174px);
 }
 
 .boxes > div {
@@ -44,22 +54,36 @@ body {
   justify-content: center;
   border: black solid 3px;
   flex: 1;
-  min-height: 800px;
   min-width: 450px;
 }
 
-.boxes > div.active {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.boxes.active > div {
+  display: none;
+}
+
+.color_yellow .boxes > div {
+  border: yellow solid 3px;
+  fill: yellow;
   background-color: #000;
 }
 
-.boxes > div.active img {
-  filter: brightness(0) invert(1);
+.boxes > div.active {
+  display: flex;
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background-color: #000;
 }
 
- img {
+.boxes > div.active svg {
+  fill: #fff;
+}
+
+.color_yellow .boxes > div.active svg {
+  fill: yellow;
+}
+
+img {
   width: 140px;
   max-width: 100%;
 }
@@ -74,16 +98,20 @@ body {
   background-color: white;
 }
 
+#fishImg {
+  width: 70%;
+}
+
 h3 {
-  font-size: 14pt;
+  font-size: 1.1em;
 }
 
 h2 {
-  font-size: 14pt;
+  font-size: 1.1em;
 }
 
 h1 {
-  font-size: 18pt;
+  font-size: 1.3em;
 }
 
 #accessability {
@@ -93,7 +121,130 @@ h1 {
 
 @media screen and (max-width: 930px) {
   .boxes > div {
-    min-height: 340px;
     min-width: 40%;
   }
+}
+
+.accessibility {
+  position: fixed; 
+  top: 20px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  padding: 6px;
+  border-radius: 0 12px 12px 0;
+  border: 2px solid black;
+  border-left: none;
+}
+
+.color_yellow .accessibility {
+  background-color: #000;
+  color: yellow;
+  border-color: yellow;
+  fill: yellow;
+}
+
+.accessibility_menu {
+  display: none;
+  background-color: lightgrey;
+  width: 300px;
+  height: 226px;
+  content: ' ';
+  position: absolute;
+  left: 44px;
+  top: 0px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px #000;
+}
+
+.buttons_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+}
+
+.btn_acc_font {
+  width: 64px;
+  border: none;
+  background-color: initial;
+}
+
+.btn_acc_font.selected {
+  border-bottom: 2px solid black;
+}
+
+.btn_acc_big {
+  font-size: 43px;
+}
+
+.btn_acc_mid {
+  font-size: 30px;
+}
+
+.btn_acc_small {
+  font-size: 20px;
+}
+
+.btn_acc_color {
+  width: 115px;
+  height: 35px;
+  border: none;
+  box-shadow: 0 1px 2px #000;
+  border-radius: 9px;
+}
+
+.btn_acc_yellow {
+  background: black;
+  color: yellow;
+  font-weight: 700;
+}
+
+.btn_acc_white {
+  background-color: white;
+  font-weight: 700;
+}
+
+.font_big {
+  font-size: large;
+}
+
+.font_mid {
+  font-size: medium;
+}
+
+.font_small {
+  font-size: small;
+}
+
+.color_yellow {
+  background-color: #000;
+  color: yellow;
+}
+
+.blur_screen {
+  display: none;
+  position: fixed;
+  width: 100vh;
+  height: 100vh;
+  background-color: #000000aa;
+  content: ' ';
+  top: 0;
+  left: 0;
+}
+
+.show {
+  display: block;
+}
+
+.close_acc_btn {
+  width: 50px;
+  position: absolute;
+  left: 0;
+  fill: #000;
 }

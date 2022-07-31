@@ -1,5 +1,3 @@
-
-
 var sound;
 
 function isActive(id, soundId, soundId2) {
@@ -57,6 +55,7 @@ function isActive(id, soundId, soundId2) {
       closeBtn.classList.add('show')
       break
   }
+  document.querySelector('.boxes').classList.add('active')
 }
 
 function clearAll() {
@@ -73,4 +72,46 @@ function clearAll() {
   dog.classList.remove('active')
   pond.classList.remove('active')
   food.classList.remove('active')
+
+  document.querySelector('.boxes').classList.remove('active')
+}
+
+function toggleAccessMenu() {
+  document.querySelector('.accessibility_menu').classList.toggle('show')
+  document.querySelector('.blur_screen').classList.toggle('show')
+}
+
+function applyYellowColor() {
+  document.body.classList.add('color_yellow')
+}
+
+function removeYellowColor() {
+  document.body.classList.remove('color_yellow')
+}
+
+function applyFontSizeBig() {
+  document.body.classList.remove('font_mid')
+  document.body.classList.remove('font_small')
+  document.body.classList.add('font_big')
+  document.querySelector('.btn_acc_mid').classList.remove('selected')
+  document.querySelector('.btn_acc_small').classList.remove('selected')
+  document.querySelector('.btn_acc_big').classList.add('selected')
+}
+
+function applyFontSizeMid() {
+  document.body.classList.remove('font_big')
+  document.body.classList.remove('font_small')
+  document.body.classList.add('font_mid')
+  document.querySelector('.btn_acc_mid').classList.add('selected')
+  document.querySelector('.btn_acc_small').classList.remove('selected')
+  document.querySelector('.btn_acc_big').classList.remove('selected')
+}
+
+function applyFontSizeSmall() {
+  document.body.classList.remove('font_big')
+  document.body.classList.remove('font_mid')
+  document.body.classList.add('font_small')
+  document.querySelector('.btn_acc_mid').classList.remove('selected')
+  document.querySelector('.btn_acc_small').classList.add('selected')
+  document.querySelector('.btn_acc_big').classList.remove('selected')
 }
