@@ -178,6 +178,7 @@ h1 {
 }
 
 .btn_acc_font {
+  width: 64px;
   border: none;
   background-color: initial;
 }
