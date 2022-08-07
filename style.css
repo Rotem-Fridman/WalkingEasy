@@ -164,7 +164,7 @@ h1 {
 }
 
 .buttons_container {
-  width: 62%;
+  width: 186px;
   display: flex;
   justify-content: space-around;
   flex-direction: row-reverse;
@@ -179,13 +179,13 @@ h1 {
 }
 
 .btn_acc_font {
-  width: 40px;
+  width: 64px;
   border: none;
   background-color: initial;
 }
 
 .btn_acc_font.selected {
-  border-bottom: 2px solid black;
+  /* border-bottom: 2px solid black; */
 }
 
 .btn_acc_big {
