@@ -185,7 +185,7 @@ h1 {
 }
 
 .btn_acc_font.selected {
-  /* border-bottom: 2px solid black; */
+  border-bottom: 2px solid yellow;
 }
 
 .btn_acc_big {
