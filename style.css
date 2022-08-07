@@ -185,12 +185,11 @@ h1 {
 }
 
 .btn_acc_font.selected {
-  border-bottom: 2px solid yellow;
+  /* border-bottom: 2px solid black; */
 }
 
 .btn_acc_big {
   font-size: 43px;
-  margin-left: 5px;
 }
 
 .btn_acc_mid {
