@@ -49,7 +49,7 @@ body {
   height: calc(100vh - 202px);
 }
 
-.boxes > div {
+.boxes > button {
   display: flex;
   align-items: center;
   justify-content: center;
