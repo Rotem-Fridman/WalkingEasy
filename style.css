@@ -26,6 +26,8 @@ body {
   left: 0px;
   display: none;
   width:80px;
+  margin: 0;
+  padding: 0;
 }
 
 .color_yellow .back-btn {
