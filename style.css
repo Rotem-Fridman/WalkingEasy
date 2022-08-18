@@ -267,4 +267,8 @@ button.btn_acc_yellow {
   position: absolute;
   left: 0;
   fill: #000;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: none;
 }
