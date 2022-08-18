@@ -58,17 +58,17 @@ body {
   min-width: 450px;
 }
 
-.boxes.active > div {
+.boxes.active > button {
   display: none;
 }
 
-.color_yellow .boxes > div {
+.color_yellow .boxes > button {
   border: yellow solid 3px;
   fill: yellow;
   background-color: #000;
 }
 
-.boxes > div.active {
+.boxes > button.active {
   display: flex;
   position: absolute;
   width: calc(100% - 6px);
@@ -76,15 +76,15 @@ body {
   background-color: #000;
 }
 
-.boxes > div > svg {
+.boxes > button > svg {
   width: 80%;
 }
 
-.boxes > div.active svg {
+.boxes > button.active svg {
   fill: #fff;
 }
 
-.color_yellow .boxes > div.active svg {
+.color_yellow .boxes > button.active svg {
   fill: yellow;
 }
 
@@ -125,7 +125,7 @@ h1 {
 }
 
 @media screen and (max-width: 930px) {
-  .boxes > div {
+  .boxes > button {
     min-width: 40%;
   }
 }
