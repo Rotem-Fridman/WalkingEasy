@@ -17,6 +17,8 @@ function isActive(id, soundId, soundId2) {
       sound.play()
       element.classList.add('active')
       closeBtn.classList.add('show')
+      text = document.getElementById('someTest')
+      text.style.display = "block"
       break
     case 'dog':
       element = document.getElementById(imgId)
