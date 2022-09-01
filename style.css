@@ -85,6 +85,9 @@ body {
 
 .boxes > button.active svg {
   fill: #fff;
+  width: 66%;
+  position: relative;
+  top: -17%;
 }
 
 .color_yellow .boxes > button.active svg {
@@ -273,6 +276,7 @@ button.btn_acc_yellow {
   color: white;
   position: absolute;
   top: 50%;
-  left: 25%;
-  width: 50%;
+  left: 10%;
+  width: 80%;
+  text-align: center;
 }
