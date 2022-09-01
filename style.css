@@ -275,4 +275,8 @@ button.btn_acc_yellow {
 
 #someTest {
   color: white;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 50%;
 }

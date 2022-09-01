@@ -19,6 +19,7 @@ function isActive(id, soundId, soundId2) {
       closeBtn.classList.add('show')
       text = document.getElementById('someTest')
       text.style.display = "block"
+      text.innerText = 'להגעה לצומת הראשית המשך ישר עד שתשמע הקלטה צומת ראשית'
       break
     case 'dog':
       element = document.getElementById(imgId)
