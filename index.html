@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="style.css" />
-<script src="script.js"></script>
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
-</style>
-
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="description" content="CampusRoutes">
     <meta name="keywords" content="Blind, Navigation, Israeli Dog Center">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+    </style>
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="main" id="mainbackground">
@@ -30,14 +28,18 @@
       </section>
 
       <div class="boxes">
-        <button aria-label="כניסת הולכי רגל" onclick="isActive('room', 'roomSound', 'roomSound2')" id="room">
+        <button aria-label="צומת ראשית" onclick="isActive('room', 'roomSound', 'roomSound2')" id="room">
           <svg aria-hidden="true" focusable="false" id="bedImg" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
             <g>
               <path d="m406.07 342.55h-129.31v68.738l-125.81-105.86 125.81-105.86v68.734h129.31v-129.3h-68.742l105.86-125.82 105.86 125.82h-68.734v407.83h-74.246z" fill-rule="evenodd"/>
             </g>
            </svg>
-          <audio id="roomSound" src="Sounds/MainJunction.mp3"></audio>
+          <audio id="roomSound" src=""></audio>
+          <!-- <audio id="roomSound" src="Sounds/MainJunction.mp3"></audio> -->
           <audio id="roomSound2" src=""></audio>
+          <span aria-label="להגעה לצומת הראשית המשך ישר עד שתשמע הקלטה צומת ראשית">
+            להגעה לצומת הראשית המשך ישר עד שתשמע הקלטה צומת ראשית
+          </span>
         </button>
         <button aria-label="חצר הרצה" onclick="isActive('dog', 'dogSound', 'dogSound2')" id="dog">
           <svg aria-hidden="true" focusable="false" id="dogImg" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +59,7 @@
           <audio id="pondSound" src="Sounds/Pond_1.mp3"></audio>
           <audio id="pondSound2" src="Sounds/Pond_2.mp3"></audio>
         </button>
-        <button aria-label="צומת ראשית" onclick="isActive('food', 'foodSound', 'foodSound2')" id="food">
+        <button aria-label="כניסה להולכי רגל" onclick="isActive('food', 'foodSound', 'foodSound2')" id="food">
           <svg aria-hidden="true" focusable="false" id="mealImg" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
             <g>
              <path d="m385.28 85.68c0 15.465-12.539 28-28 28-15.465 0-28-12.535-28-28 0-15.465 12.535-28 28-28 15.461 0 28 12.535 28 28"/>
