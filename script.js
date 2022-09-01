@@ -3,21 +3,25 @@ const buttons = {
     sound1: "Sounds/MainJunction.mp3",
     sound2: "",
     text: "להגעה לצומת הראשית המשך ישר עד שתשמע הקלטה צומת ראשית",
+    header: "צומת ראשית",
   },
   "dog": {
     sound1: "Sounds/Dog_1.mp3",
     sound2: "Sounds/Dog_2.mp3",
     text: "להגעה לחצר ההרצה המשך ישר בדרך תשמע הכרזה צומת ראשית, תדע כי אתה בכיוון הנכון. תמשיך ישר עד שתגיע לבליטות בריצפה. בהגעה לבליטות היצמד לשמאל עד שתפגוש מעקה. היצמד למעקה ותלך בעקבותיו עד שתשמע הכרזה חצר הרצה",
+    header: "חצר הרצה",
   },
   "pond": {
     sound1: "Sounds/Pond_1.mp3",
     sound2: "Sounds/Pond_2.mp3",
     text: "להגעה לבריכת הדגים המשך ישר עד שתשמע הכרזה צומת ראשית. עבור את הצומת הראשית ומיד פנה ימינה והמשך ישר לבריכת הדגים עד שתשמע הכרזה בריכת דגים",
+    header: "בריכת דגים"
   },
   "enterance": {
     sound1: "Sounds/Junction_1.mp3",
     sound2: "Sounds/Junction_2.mp3",
     text: "להגעה לכניסת הולכי הרגל המשך ישר עד שתשמע הכרזה צומת ראשית. פנה שמאלה והמשך ללכת ישר עד שתשמע הכרזה כניסת הולכי רגל",
+    header: "כניסה להולכי רגל"
   },
 }
 
@@ -43,6 +47,7 @@ function isActive(id, soundId, soundId2) {
       text = document.getElementById('someTest')
       text.style.display = "block"
       text.innerText = buttons[imgId].text;
+      element.setAttribute('aria-label', buttons[imgId].text)
       break
     case 'dog':
       element = document.getElementById(imgId)
@@ -58,6 +63,7 @@ function isActive(id, soundId, soundId2) {
       text = document.getElementById('someTest')
       text.style.display = "block"
       text.innerText = buttons[imgId].text;
+      element.setAttribute('aria-label', buttons[imgId].text)
       break
     case 'pond':
       element = document.getElementById(imgId)
@@ -73,6 +79,7 @@ function isActive(id, soundId, soundId2) {
       text = document.getElementById('someTest')
       text.style.display = "block"
       text.innerText = buttons[imgId].text;
+      element.setAttribute('aria-label', buttons[imgId].text)
       break
     case 'enterance':
       element = document.getElementById(imgId)
@@ -88,6 +95,7 @@ function isActive(id, soundId, soundId2) {
       text = document.getElementById('someTest')
       text.style.display = "block"
       text.innerText = buttons[imgId].text;
+      element.setAttribute('aria-label', buttons[imgId].text)
       break
   }
   document.querySelector('.boxes').classList.add('active')
@@ -107,6 +115,11 @@ function clearAll() {
   dog.classList.remove('active')
   pond.classList.remove('active')
   enterance.classList.remove('active')
+
+  room.setAttribute('aria-label', buttons["room"].header)
+  dog.setAttribute('aria-label', buttons["dog"].header)
+  pond.setAttribute('aria-label', buttons["pond"].header)
+  enterance.setAttribute('aria-label', buttons["enterance"].header)
 
   document.querySelector('.boxes').classList.remove('active')
   text = document.getElementById('someTest')
