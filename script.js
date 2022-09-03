@@ -25,79 +25,44 @@ const buttons = {
   },
 }
 
-let sound
+let audioOption = false;
 
-function isActive(id, soundId, soundId2) {
+const sound = document.getElementById("sound")
+const audioPanel = document.querySelector(".audio_panel")
+
+function isActive(id) {
   const imgId = id
   let element
   var closeBtn = document.getElementById('closeBtn')
 
-  switch (imgId) {
-    case 'room':
-      element = document.getElementById(imgId)
-      // if (element.classList.contains('active')) {
-      //   sound.pause()
-      //   sound = document.getElementById(soundId2)
-      // } else {
-      //   sound = document.getElementById(soundId)
-      // }
-      // sound.play()
-      element.classList.add('active')
-      closeBtn.classList.add('show')
-      text = document.getElementById('someTest')
-      text.style.display = "block"
-      text.innerText = buttons[imgId].text;
-      element.setAttribute('aria-label', buttons[imgId].text)
-      break
-    case 'dog':
-      element = document.getElementById(imgId)
-      // if (element.classList.contains('active')) {
-      //   sound.pause()
-      //   sound = document.getElementById(soundId2)
-      // } else {
-      //   sound = document.getElementById(soundId)
-      // }
-      // sound.play()
-      element.classList.add('active')
-      closeBtn.classList.add('show')
-      text = document.getElementById('someTest')
-      text.style.display = "block"
-      text.innerText = buttons[imgId].text;
-      element.setAttribute('aria-label', buttons[imgId].text)
-      break
-    case 'pond':
-      element = document.getElementById(imgId)
-      // if (element.classList.contains('active')) {
-      //   sound.pause()
-      //   sound = document.getElementById(soundId2)
-      // } else {
-      //   sound = document.getElementById(soundId)
-      // }
-      // sound.play()
-      element.classList.add('active')
-      closeBtn.classList.add('show')
-      text = document.getElementById('someTest')
-      text.style.display = "block"
-      text.innerText = buttons[imgId].text;
-      element.setAttribute('aria-label', buttons[imgId].text)
-      break
-    case 'enterance':
-      element = document.getElementById(imgId)
-      // if (element.classList.contains('active')) {
-      //   sound.pause()
-      //   sound = document.getElementById(soundId2)
-      // } else {
-      //   sound = document.getElementById(soundId)
-      // }
-      // sound.play()
-      element.classList.add('active')
-      closeBtn.classList.add('show')
-      text = document.getElementById('someTest')
-      text.style.display = "block"
-      text.innerText = buttons[imgId].text;
-      element.setAttribute('aria-label', buttons[imgId].text)
-      break
+  element = document.getElementById(imgId)
+  if (audioOption) {
+    console.log('audioOption is on')
+    if (element.classList.contains('active')) {
+      console.log('element is active')
+      sound.pause()
+      if (buttons[imgId].sound2) {
+        sound.src = buttons[imgId].sound2
+      }
+    } else {
+      console.log('element is not active')
+      if (buttons[imgId].sound1) {
+        sound.src = buttons[imgId].sound1
+      }
+    }
+    sound.play()
+    audioPanel.classList.add('show_flex')
+    element.setAttribute('aria-label', '')
+  } else {    
+    text = document.getElementById('accessability_text')
+    text.style.display = "block"
+    text.innerText = buttons[imgId].text;
+    element.setAttribute('aria-label', buttons[imgId].text)
   }
+
+  element.classList.add('active')
+  closeBtn.classList.add('show')
+  
   document.querySelector('.boxes').classList.add('active')
 }
 
@@ -108,13 +73,19 @@ function clearAll() {
   var pond = document.getElementById('pond')
   var enterance = document.getElementById('enterance')
 
-  // sound.pause()
-  // sound.currentTime = 0;
   closeBtn.classList.remove('show')
   room.classList.remove('active')
   dog.classList.remove('active')
   pond.classList.remove('active')
   enterance.classList.remove('active')
+
+  if (audioOption) {
+    sound.pause()
+    sound.currentTime = 0;
+    audioPanel.classList.remove('show_flex')
+    document.querySelector(".play").classList.remove('show_flex')
+    document.querySelector(".pause").classList.add('show_flex')
+  }
 
   room.setAttribute('aria-label', buttons["room"].header)
   dog.setAttribute('aria-label', buttons["dog"].header)
@@ -122,47 +93,40 @@ function clearAll() {
   enterance.setAttribute('aria-label', buttons["enterance"].header)
 
   document.querySelector('.boxes').classList.remove('active')
-  text = document.getElementById('someTest')
+  text = document.getElementById('accessability_text')
   text.style.display = "none"
   text.innerText = "";
 }
 
-function toggleAccessMenu() {
-  document.querySelector('.accessibility_menu').classList.toggle('show')
+function toggleSettingsMenu() {
+  document.querySelector('.settings_menu').classList.toggle('show')
   document.querySelector('.blur_screen').classList.toggle('show')
 }
 
-function applyYellowColor() {
-  document.body.classList.add('color_yellow')
+function switchToScreenReader() {
+  audioOption = false
+  document.querySelector("#screen_reader_btn").classList.add('selected')
+  document.querySelector("#recordings_btn").classList.remove('selected')
 }
 
-function removeYellowColor() {
-  document.body.classList.remove('color_yellow')
+function switchToRecordings() {
+  audioOption = true
+  document.querySelector("#screen_reader_btn").classList.remove('selected')
+  document.querySelector("#recordings_btn").classList.add('selected')
 }
 
-function applyFontSizeBig() {
-  document.body.classList.remove('font_mid')
-  document.body.classList.remove('font_small')
-  document.body.classList.add('font_big')
-  document.querySelector('.btn_acc_mid').classList.remove('selected')
-  document.querySelector('.btn_acc_small').classList.remove('selected')
-  document.querySelector('.btn_acc_big').classList.add('selected')
+function pause() {
+  sound.pause()
+  document.querySelector(".play").classList.add('show_flex')
+  document.querySelector(".pause").classList.remove('show_flex')
 }
 
-function applyFontSizeMid() {
-  document.body.classList.remove('font_big')
-  document.body.classList.remove('font_small')
-  document.body.classList.add('font_mid')
-  document.querySelector('.btn_acc_mid').classList.add('selected')
-  document.querySelector('.btn_acc_small').classList.remove('selected')
-  document.querySelector('.btn_acc_big').classList.remove('selected')
+function play() {
+  sound.play()
+  document.querySelector(".play").classList.remove('show_flex')
+  document.querySelector(".pause").classList.add('show_flex')
 }
 
-function applyFontSizeSmall() {
-  document.body.classList.remove('font_big')
-  document.body.classList.remove('font_mid')
-  document.body.classList.add('font_small')
-  document.querySelector('.btn_acc_mid').classList.remove('selected')
-  document.querySelector('.btn_acc_small').classList.add('selected')
-  document.querySelector('.btn_acc_big').classList.remove('selected')
+function replay() {
+  sound.currentTime = 0;
 }

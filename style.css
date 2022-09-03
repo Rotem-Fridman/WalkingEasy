@@ -30,10 +30,6 @@ body {
   padding: 0;
 }
 
-.color_yellow .back-btn {
-  fill: yellow
-}
-
 .back-btn.show {
     display: block;
 }
@@ -65,12 +61,6 @@ body {
   display: none;
 }
 
-.color_yellow .boxes > button {
-  border: yellow solid 3px;
-  fill: yellow;
-  background-color: #000;
-}
-
 .boxes > button.active {
   display: flex;
   position: absolute;
@@ -88,10 +78,6 @@ body {
   width: 66%;
   position: relative;
   top: -17%;
-}
-
-.color_yellow .boxes > button.active svg {
-  fill: yellow;
 }
 
 img {
@@ -125,18 +111,37 @@ h1 {
   font-size: 1.3em;
 }
 
-#accessability {
-  width: 20px;
-  height: 20px;
-}
-
 @media screen and (max-width: 930px) {
   .boxes > button {
     min-width: 40%;
   }
 }
 
-button.acc_icon {
+.audio_panel {
+  position: absolute;
+  display: none;
+  bottom: 80px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.audio_panel button {
+  background: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#settings {
+  width: 20px;
+  height: 20px;
+}
+
+button.settings_icon {
   border: none;
   background: none;
   width: 31px;
@@ -144,7 +149,7 @@ button.acc_icon {
   padding: 0;
 }
 
-.accessibility {
+.settings {
   position: fixed; 
   top: 20px;
   left: 0px;
@@ -157,14 +162,7 @@ button.acc_icon {
   border-left: none;
 }
 
-.color_yellow .accessibility {
-  background-color: #000;
-  color: yellow;
-  border-color: yellow;
-  fill: yellow;
-}
-
-.accessibility_menu {
+.settings_menu {
   display: none;
   background-color: lightgrey;
   width: 300px;
@@ -181,7 +179,7 @@ button.acc_icon {
   width: 186px;
   display: flex;
   justify-content: space-around;
-  flex-direction: row-reverse;
+  flex-direction: column;
   margin: 20px 18%;
   font-size: 20px;
   font-weight: 700;
@@ -192,58 +190,20 @@ button.acc_icon {
   color: #000;
 }
 
-.btn_acc_font {
-  width: 64px;
-  border: none;
-  background-color: initial;
-}
-
-.btn_acc_big {
-  font-size: 43px;
-}
-
-.btn_acc_mid {
-  font-size: 30px;
-}
-
-.btn_acc_small {
-  font-size: 20px;
-}
-
-.btn_acc_color {
-  width: 115px;
-  height: 35px;
+.btn_settings {
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  opacity: .5;
   border: none;
   box-shadow: 0 1px 2px #000;
   border-radius: 9px;
 }
 
-button.btn_acc_yellow {
-  background: black;
-  color: yellow;
-  font-weight: 700;
-}
-
-.btn_acc_white {
-  background-color: white;
-  font-weight: 700;
-}
-
-.font_big {
-  font-size: 1.4em;
-}
-
-.font_mid {
-  font-size: 1.3em;
-}
-
-.font_small {
-  font-size: 1.2em;
-}
-
-.color_yellow {
+.btn_settings.selected {
+  opacity: 1;
   background-color: #000;
-  color: yellow;
+  color: #fff;
 }
 
 .blur_screen {
@@ -261,6 +221,10 @@ button.btn_acc_yellow {
   display: block;
 }
 
+.show_flex {
+  display: flex !important;
+}
+
 .close_acc_btn {
   width: 50px;
   position: absolute;
@@ -272,7 +236,7 @@ button.btn_acc_yellow {
   background: none;
 }
 
-#someTest {
+#accessability_text {
   color: white;
   position: absolute;
   top: 50%;
