@@ -147,6 +147,7 @@ button.settings_icon {
   width: 31px;
   height: 30px;
   padding: 0;
+  padding-top: 2px;
 }
 
 .settings {
