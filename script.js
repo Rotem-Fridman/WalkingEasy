@@ -100,7 +100,12 @@ function clearAll() {
 
 function toggleSettingsMenu() {
   document.querySelector('.settings_menu').classList.toggle('show')
-  document.querySelector('.blur_screen').classList.toggle('show')
+  document.querySelector('.settings .blur_screen').classList.toggle('show')
+}
+
+function toggleInfoMenu() {
+  document.querySelector('.info_menu').classList.toggle('show')
+  document.querySelector('.info .blur_screen').classList.toggle('show')
 }
 
 function switchToScreenReader() {

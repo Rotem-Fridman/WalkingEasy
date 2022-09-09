@@ -22,7 +22,7 @@ body {
   border: none;
   background-color: transparent;
   position: absolute;
-  top: 100px;
+  top: 185px;
   left: 0px;
   display: none;
   width:80px;
@@ -34,6 +34,10 @@ body {
     display: block;
 }
 
+.back-btn svg {
+  fill: #fff;
+}
+
 .title {
   height: 182px;
   padding-right: 12px;
@@ -42,9 +46,8 @@ body {
 .boxes {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
   position: relative;
-  height: calc(100vh - 202px);
+  height: calc(100vh - 182px);
 }
 
 .boxes > button {
@@ -64,8 +67,8 @@ body {
 .boxes > button.active {
   display: flex;
   position: absolute;
-  width: calc(100% - 6px);
-  height: calc(100% - 6px);
+  width: 100%;
+  height: 100%;
   background-color: #000;
 }
 
@@ -136,21 +139,7 @@ h1 {
   justify-content: center;
 }
 
-#settings {
-  width: 20px;
-  height: 20px;
-}
-
-button.settings_icon {
-  border: none;
-  background: none;
-  width: 31px;
-  height: 30px;
-  padding: 0;
-  padding-top: 2px;
-}
-
-.settings {
+.side-btn {
   position: fixed; 
   top: 20px;
   left: 0px;
@@ -161,6 +150,21 @@ button.settings_icon {
   border-radius: 0 12px 12px 0;
   border: 2px solid black;
   border-left: none;
+  z-index: 0;
+}
+
+.settings {
+  /* position: fixed; 
+  top: 20px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  padding: 6px;
+  border-radius: 0 12px 12px 0;
+  border: 2px solid black;
+  border-left: none;
+  z-index: 0; */
 }
 
 .settings_menu {
@@ -171,26 +175,22 @@ button.settings_icon {
   content: ' ';
   position: absolute;
   left: 44px;
-  top: 0px;
+  top: 20px;
   border-radius: 5px;
   box-shadow: 0 1px 2px #000;
   padding-top: 10px;
+  z-index: 3;
 }
 
-.buttons_container {
-  width: 196px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  margin: 20px 18%;
-  font-size: 20px;
-  font-weight: 700;
-  color: black;
-  text-align: center;
-}
-
-.buttons_container button {
-  color: #000;
+button.settings_icon {
+  border: none;
+  background: none;
+  width: 31px;
+  height: 30px;
+  padding: 0;
+  padding-top: 2px;
+  position: absolute;
+  z-index: 1;
 }
 
 .btn_settings {
@@ -209,6 +209,80 @@ button.settings_icon {
   color: #fff;
 }
 
+.side-btn.info {
+  /* position: fixed;  */
+  top: 70px;
+  /* left: 0px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  padding: 6px;
+  border-radius: 0 12px 12px 0;
+  border: 2px solid black;
+  border-left: none;
+  z-index: 0; */
+}
+
+.info_menu {
+  display: none;
+  background-color: lightgrey;
+  width: 90%;
+  max-height: 90%;
+  content: ' ';
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px #000;
+  padding-top: 10px;
+  z-index: 3;
+  overflow-y: scroll;
+  padding-bottom: 20px;
+}
+
+button.info_icon {
+  border: none;
+  background: none;
+  width: 31px;
+  height: 30px;
+  padding: 0;
+  padding-top: 2px;
+  position: absolute;
+  z-index: 1;
+}
+
+.btn_info {
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  opacity: .5;
+  border: none;
+  box-shadow: 0 1px 2px #000;
+  border-radius: 9px;
+}
+
+.btn_settings.selected {
+  opacity: 1;
+  background-color: #000;
+  color: #fff;
+}
+
+.buttons_container {
+  width: 196px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 20px 18%;
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  text-align: center;
+}
+
+.buttons_container button {
+  color: #000;
+}
+
 .blur_screen {
   display: none;
   position: fixed;
@@ -218,6 +292,7 @@ button.settings_icon {
   content: ' ';
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 .show {
@@ -247,4 +322,63 @@ button.settings_icon {
   left: 10%;
   width: 80%;
   text-align: center;
+}
+
+.info_menu p {
+  text-align: center;
+  padding: 0 15px;
+  font-size: 14pt;
+}
+
+.project_title img{
+  width: 88px;
+}
+
+.details_n_logo {
+  display: flex;
+}
+
+.details_n_logo .logo {
+  margin-right: 15px;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.details_n_logo .logo img {
+  /* width: 100px; */
+}
+
+.details_n_logo .details {
+  margin-right: 15px;
+  padding-left: 15px;
+}
+
+.details_n_logo .details .title {
+  height: auto;
+  text-align: right;
+  font-size: 12pt;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.details_n_logo .details .text {
+  text-align: right;
+  font-size: 12pt;
+  padding: 0;
+  margin: 0;
+}
+
+.info header {
+  background-color: #999;
+  font-size: 12pt;
+  text-align: center;
+  padding: 3px 0;
+ }
+
+.info footer {
+ background-color: #999;
+ font-size: 12pt;
+ text-align: center;
+ padding: 3px 0;
 }
